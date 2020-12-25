@@ -1,0 +1,10 @@
+{
+  "restartable": "rs",
+  "watch": ["src/"],
+  "execMap": {
+    "ts": "node --require ts-node/register --nolazy"
+  },
+  "verbose": true,
+  "ignore": ["node_modules"],
+  "ext": "js,json,ts"
+}
