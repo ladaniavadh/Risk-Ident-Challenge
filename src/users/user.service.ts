@@ -73,8 +73,10 @@ export class UserService {
 
   private processForParent (obj: Transaction, context: Context, outputArray: Array<object>, transactionId: string, confidenceLevel: number) {
     const newContext = JSON.parse(JSON.stringify(context))
-    newContext.types = (newContext.types).concat(obj.connectionInfo.type)
-    newContext.confidence = (newContext.confidence * obj.connectionInfo.confidence).toFixed(3)
+    if (obj.connectionInfo) {
+      newContext.types = (newContext.types).concat(obj.connectionInfo.type)
+      newContext.confidence = (newContext.confidence * obj.connectionInfo.confidence).toFixed(3)
+    }
 
     const newObj = JSON.parse(JSON.stringify(obj))
     delete newObj.children
@@ -87,8 +89,10 @@ export class UserService {
 
   private processForChild (obj: Transaction, context: Context, outputArray: Array<object>, transactionId: string, confidenceLevel: number) {
     const newContext = JSON.parse(JSON.stringify(context))
-    newContext.types = (newContext.types).concat(obj.connectionInfo.type)
-    newContext.confidence = (newContext.confidence * obj.connectionInfo.confidence).toFixed(3)
+    if (obj.connectionInfo) {
+      newContext.types = (newContext.types).concat(obj.connectionInfo.type)
+      newContext.confidence = (newContext.confidence * obj.connectionInfo.confidence).toFixed(3)
+    }
 
     const newObj = JSON.parse(JSON.stringify(obj))
     newObj.combinedConnectionInfo = JSON.parse(JSON.stringify(newContext))
