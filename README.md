@@ -6,6 +6,10 @@ Nodejs
 Express
 API
 
+######################################
+install npm modules  "npm install" 
+start the server "npm start"
+
 
 # Dataset
 The dataset given is an array of transaction graphs.
@@ -34,6 +38,4 @@ Make sure your code is clean & well formatted as per industry standards.
 Please write a Readme containing the instructions to run the code, along with any other info you may find necessary
 For the data, make sure to use the test data json file that you are provided with, please don’t edit that file
 
-######
-install npm modules  "npm install" 
-start the server "npm start"
+
